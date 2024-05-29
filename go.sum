@@ -1,0 +1,4 @@
+github.com/BurntSushi/toml v1.4.0 h1:kuoIxZQy2WRRk1pttg9asf+WVv6tWQuBNVmK8+nqPr0=
+github.com/BurntSushi/toml v1.4.0/go.mod h1:ukJfTF/6rtPPRCnwkur4qwRxa8vTRFBF0uk2lLoLwho=
+github.com/PaulSonOfLars/gotgbot/v2 v2.0.0-rc.27 h1:rOlGzmYC3jPVPLVLWKMiiYuePQ6MV8Cyw5qJYBoMnkY=
+github.com/PaulSonOfLars/gotgbot/v2 v2.0.0-rc.27/go.mod h1:kL1v4iIjlalwm3gCYGvF4NLa3hs+aKEfRkNJvj4aoDU=

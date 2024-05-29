@@ -1,0 +1,7 @@
+[bot]
+token = "bottoken"
+sudoId = 0123456789
+
+[rqbit]
+ip = "http://127.0.0.1"
+port = 3030
