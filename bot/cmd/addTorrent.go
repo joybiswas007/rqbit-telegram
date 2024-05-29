@@ -23,7 +23,7 @@ func AddTorrent(b *gotgbot.Bot, ctx *ext.Context) error {
 
 	parts := strings.Split(ctx.Message.Text, " ")
 	if len(parts) != 2 {
-		botutils.ReplyMessage(b, ctx, "<b>Command can't be empty. Must provide valid magnet link or http torrent link.</b>")
+		botutils.ReplyMessage(b, ctx, "<b>link can't be empty. Must provide valid magnet link or http torrent link.</b>")
 		return nil
 	}
 

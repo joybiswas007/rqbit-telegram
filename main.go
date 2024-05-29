@@ -40,6 +40,12 @@ func main() {
 	dispatcher.AddHandler(handlers.NewCommand("start", cmd.Start))
 	dispatcher.AddHandler(handlers.NewCommand("add", cmd.AddTorrent))
 	dispatcher.AddHandler(handlers.NewMessage(message.Document, cmd.AddTorrentFile))
+	dispatcher.AddHandler(handlers.NewCommand("ids", cmd.GetTorrentIDs))
+	dispatcher.AddHandler(handlers.NewCommand("status", cmd.Status))
+	dispatcher.AddHandler(handlers.NewCommand("pause", cmd.ManageTorrent))
+	dispatcher.AddHandler(handlers.NewCommand("resume", cmd.ManageTorrent))
+	dispatcher.AddHandler(handlers.NewCommand("remove", cmd.ManageTorrent))
+	dispatcher.AddHandler(handlers.NewCommand("delete", cmd.ManageTorrent))
 
 	// Start receiving updates.
 	err = updater.StartPolling(b, &ext.PollingOpts{

@@ -1,5 +1,5 @@
 # rqbit-telegram
-A Telegram bot to remotely control rqbit instance.
+A Telegram bot to remotely control your rqbit instance.
 
 # Installation
 
@@ -8,7 +8,7 @@ Make sure you've latest version of golang installed<br/>
 2. cd into the repo <br/>
 3. run `go mod download` or `go mod tidy` or both <br/>
 4. copy the sample.config.toml to config.toml and fill with deatils <br/>
-5. `go build -o rqbtg ./main.go` <br/>
+5. run `make build` or `make build-linux` <br/>
 6. run the binay `./rqbtg`
 
 # Usage
@@ -18,6 +18,12 @@ Make sure you've latest version of golang installed<br/>
 /start - start the bot with basic information
 /add "metalink" - pass magnet link or http .torrent link and bot will add it to client.
 If you want to to add .torrent file just send any .torrent file to the bot (no command requires) and bot will add it to the client.
+/ids - returns all the id of the torrent from rqbit client
+/status "id" - pass id to view the task details of the specific id
+/pause "id" - pause a specific torrent
+/resume "id" - resume a paused job
+/remove "id" - remove a job from client doesn't remove files from disk
+/delete "id" - remove a job from client also remove files from disk
 ```
 
 ## Contributing

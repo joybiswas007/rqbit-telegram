@@ -6,10 +6,10 @@ import (
 	"net/http"
 )
 
-// get the torrents list
-func (rqb *RQBitConfig) GetTorrents() (*Torrents, error) {
+// pass torrent id and returns specific torrents details
+func (rqb *RQBitConfig) GetTorrentStats(tID int) (*TorrentStats, error) {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s:%d/torrents", rqb.IpAddress, rqb.Port), nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s:%d/torrents/%d/stats/v1", rqb.IpAddress, rqb.Port, tID), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -29,10 +29,10 @@ func (rqb *RQBitConfig) GetTorrents() (*Torrents, error) {
 		return nil, &rqError
 	}
 
-	var torrents Torrents
-	if err := json.NewDecoder(resp.Body).Decode(&torrents); err != nil {
-		return nil, fmt.Errorf("failed to decode torrents response: %v", err)
+	var stats TorrentStats
+	if err := json.NewDecoder(resp.Body).Decode(&stats); err != nil {
+		return nil, fmt.Errorf("failed to decode torrent stats response: %v", err)
 	}
 
-	return &torrents, nil
+	return &stats, nil
 }
