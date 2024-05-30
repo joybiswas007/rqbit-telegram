@@ -70,11 +70,14 @@ type TorrentStats struct {
 }
 
 type Live struct {
-	Snapshot                 Snapshot    `json:"snapshot"`
-	AveragePieceDownloadTime Duration    `json:"average_piece_download_time"`
-	DownloadSpeed            Speed       `json:"download_speed"`
-	UploadSpeed              Speed       `json:"upload_speed"`
-	TimeRemaining            interface{} `json:"time_remaining"`
+	Snapshot                 Snapshot `json:"snapshot"`
+	AveragePieceDownloadTime Duration `json:"average_piece_download_time"`
+	DownloadSpeed            Speed    `json:"download_speed"`
+	UploadSpeed              Speed    `json:"upload_speed"`
+	TimeRemaining            struct {
+		Duration      Duration `json:"duration"`
+		HumanReadable string   `json:"human_readable"`
+	} `json:"time_remaining"`
 }
 
 type Snapshot struct {

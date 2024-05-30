@@ -42,6 +42,7 @@ func main() {
 	dispatcher.AddHandler(handlers.NewMessage(message.Document, cmd.AddTorrentFile))
 	dispatcher.AddHandler(handlers.NewCommand("ids", cmd.GetTorrentIDs))
 	dispatcher.AddHandler(handlers.NewCommand("status", cmd.Status))
+	dispatcher.AddHandler(handlers.NewCommand("stats", cmd.Stats))
 	dispatcher.AddHandler(handlers.NewCommand("pause", cmd.ManageTorrent))
 	dispatcher.AddHandler(handlers.NewCommand("resume", cmd.ManageTorrent))
 	dispatcher.AddHandler(handlers.NewCommand("remove", cmd.ManageTorrent))
